@@ -11,11 +11,13 @@
 
 <div class="container mt-5 mb-5">
   <h1>Site's blog</h1>
-  <div th:each="el : ${posts}" class="alert alert-info mt-2">
-    <h3 th:text="${el.title}"/>
-    <p th:text="${el.intro}"/>
-    <a th:href="'/blog/' + ${el.id}" class="btn btn-warning">Read More</a>
-  </div>
+    <h3 th:text="${post.title}"/>
+    <p th:text="${post.full_text}"/>
+    <p><b>Views:</b> <span th:text="${post.views}"/></p>
+    <a th:href="'/blog/' + ${post.id} + '/edit'" class="btn btn-warning">Edit</a><br><br>
+  <form th:action="'/blog/' + ${post.id} + '/delete'" method="post">
+    <button type="submit" class="btn btn-warning">Delete</button>
+  </form>
 </div>
 
 <footer th:insert="blocks/footer :: footer"></footer>

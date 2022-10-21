@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-$END$
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 md-5">
+    <form>
+        <input type="text" name="name" class="form-control" placeholder="What's your name?"><br>
+        <input type="email" name="email" class="form-control" placeholder="Specify your email"><br>
+        <input type="text" name="topic" class="form-control" placeholder="The topic of your message"><br>
+        <textarea class="form-control" placeholder="Введите сообщение"></textarea>
+        <br>
+        <button class="btn btn-success">Send!</button>
+    </form>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
 </body>
 </html>
